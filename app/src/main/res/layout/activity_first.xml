@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="#009688">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Name :"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="38dp"
+            tools:layout_editor_absoluteY="62dp" />
+
+        <EditText
+            android:id="@+id/edit_name"
+            android:layout_width="244dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"
+            android:paddingRight="0dp"
+            tools:layout_editor_absoluteX="120dp"
+            tools:layout_editor_absoluteY="54dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="94dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Age :"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="38dp"
+            tools:layout_editor_absoluteY="125dp" />
+
+        <EditText
+            android:id="@+id/edit_age"
+            android:layout_width="244dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"
+            android:paddingRight="0dp"
+            tools:layout_editor_absoluteX="117dp"
+            tools:layout_editor_absoluteY="112dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Marks :"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="38dp"
+            tools:layout_editor_absoluteY="191dp" />
+
+        <EditText
+            android:id="@+id/edit_marks"
+            android:layout_width="244dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"
+            android:paddingRight="0dp"
+            tools:layout_editor_absoluteX="113dp"
+            tools:layout_editor_absoluteY="182dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="70dp">
+
+        <Button
+            android:id="@+id/button_add"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="140dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginBottom="76dp"
+            android:text="INSERT"
+            tools:layout_editor_absoluteX="113dp"
+            tools:layout_editor_absoluteY="266dp" />
+    </LinearLayout>
+
+
+</LinearLayout>
