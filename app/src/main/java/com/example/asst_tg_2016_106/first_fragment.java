@@ -34,6 +34,15 @@ public class first_fragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_first, container, false);
 
+        databaseHelper = new DatabaseHelper(getContext());
+
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
         editName = view.findViewById(R.id.edit_name);
         editAge = view.findViewById(R.id.edit_age);
         editMarks = view.findViewById(R.id.edit_marks);
@@ -43,27 +52,18 @@ public class first_fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if(!(editName.getText().toString().equals("") || editAge.getText().toString().equals("") || editMarks.getText().toString().equals(""))){
-                    String name = editName.getText().toString();
-                    int age = Integer.parseInt(editAge.getText().toString());
-                    int marks = Integer.parseInt(editMarks.getText().toString());
+                String name = editName.getText().toString();
+                String age = editAge.getText().toString();
+                String marks = editMarks.getText().toString();
 
-                    AddData(name, age, marks);
+                Add(name, age, marks);
                 }
             }
         });
-
-        return view;
     }
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        //databaseHelper = new DatabaseHelper(getContext());
-    }
-
-    public void AddData(String name, int age, int marks) {
-        String ans = databaseHelper.AddData(name, age, marks);
+    public void Add(String name, String age, String marks) {
+       String ans = databaseHelper.AddData(name, age, marks);
         if (ans.equals("Pass")){
             editName.setText("");
             editAge.setText("");

@@ -20,14 +20,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public DatabaseHelper(Context context) {
+        super(context,"studentData.db",null,1);
+    }
+
+
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, AGE INTEGER, MARKS INTERGER)");
+        db.execSQL("CREATE TABLE "+TABLE_NAME+"(NAME VARCHAR(60), AGE VARCHAR(2), MARKS VARCHAR(2))");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS "+ TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
         onCreate(db);
     }
 /*
@@ -44,11 +49,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
     } */
 
-    public String AddData(String name, int age, int marks){
+    public String AddData(String name, String age, String marks){
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("INSERT INTO "+ TABLE_NAME + " VALUES ('"+name+"', "+age+"," + marks+")");
+       db.execSQL("INSERT INTO "+TABLE_NAME+" VALUES('"+name+"', '"+age+"', '"+marks+"')");
         db.close();
-        return null;
+
+        return "Pass";
     }
 
 
