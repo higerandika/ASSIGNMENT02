@@ -1,6 +1,7 @@
 package com.example.asst_tg_2016_106;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -55,6 +56,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
 
         return "Pass";
+    }
+    public Cursor viewData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor data=db.rawQuery("SELECT * FROM "+TABLE_NAME,null);
+        return data;
+    }
+    public Cursor findData(String name){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor data=db.rawQuery("SELECT * FROM " + TABLE_NAME+ " WHERE "+ name + " = " + name +";",null);
+        return data;
     }
 
 
